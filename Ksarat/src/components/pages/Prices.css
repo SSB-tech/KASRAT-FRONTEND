@@ -1,0 +1,127 @@
+.pricing-container {
+  background-color: #e8ecf95e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: black ;
+  padding-bottom: 4rem;
+}
+
+.pricing-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+  font-size: 50px;
+  font-style: italic;
+  font-family: "Times New Roman", serif;
+  font-weight: 600;
+  margin-bottom: 40px;
+  gap: 1rem;
+}
+
+.stroke-text {
+  color: #fff;
+  text-shadow:
+    1px 1px 0 rgba(0,0,0,0.5),
+    -1px -1px 0 rgba(0,0,0,0.5),
+    1px -1px 0 rgba(0,0,0,0.5),
+    -1px 1px 0 rgba(0,0,0,0.5);
+}
+
+
+.plan-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  
+  
+}
+
+.plan {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  width: 30%;
+  margin: 1rem;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.plan-name1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.plan-name2{
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: darkblue;
+}
+
+
+.plan-name3{
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: goldenrod;
+}
+
+
+.plan-price {
+  font-size: 1.5rem;
+  color: #df951c;
+  margin-bottom: 1rem;
+}
+
+.plan-features {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  list-style: none;
+  padding-bottom:60px;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.plan-features li {
+  margin-bottom: 10px;
+}
+
+.prices-btn {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  margin-top: 1rem;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .plan {
+    width: 90%;
+  }
+
+  .pricing-header > h1 {
+    font-size: 50px;
+    margin-top: -100px;
+  }
+
+  .pricing-header > p {
+    font-size: 30px;
+  }
+
+  .btn-mobile {
+    display: block;
+    text-decoration: none;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

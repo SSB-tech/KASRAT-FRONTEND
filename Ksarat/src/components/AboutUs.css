@@ -1,0 +1,30 @@
+.about-us {
+  text-align: center;
+  padding: 50px;
+  background: rgb(248, 245, 245);
+}
+
+.about-us h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: rgb(0, 0, 88);
+}
+
+.about-us .p1, .about-us .p2, .about-us .p3 {
+  font-size: 18px;
+  line-height: 2;
+  margin-bottom: 30px;
+  text-align: center;  
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 767px) {
+  .about-us h1 {
+    font-size: 24px;
+  }
+
+  .about-us p {
+    font-size: 16px;
+  }
+}
