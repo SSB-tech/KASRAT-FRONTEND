@@ -4,6 +4,8 @@ import '../Button.css';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import NutritionInfo from './NutritionInfo';
+import { Pie } from 'react-chartjs-2';
+
 const STYLES = ['btn--primary', 'btn--outline', 'btn--custom1', 'btn--custom2', 'btn--custom3'];
 const SIZES = ['btn--medium', 'btn--large'];
 
@@ -52,10 +54,11 @@ class BmrForm extends Component {
     console.log('Height:', this.state.height);
     console.log('Weight:', this.state.weight);
     console.log('Age:', this.state.age);
-
+    const token = localStorage.getItem('token'); 
     const options = {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 
+                'Authorization': `Bearer ${token}`},
       body: JSON.stringify(
         {
           weight: this.state.weight,
@@ -132,7 +135,7 @@ class BmrForm extends Component {
       <>
         <Navbar />
         <div className="bmrform-container">
-          <h1>Get Your Personalised Diet Plan</h1>
+          <h1 className='titletext'>Get Your Personalised Diet Plan</h1>
           <form className="form-box" onSubmit={this.handleSubmit}>
             <div className="form-group">
               <label className='form-label1'> Height (in cm) : </label>
@@ -234,7 +237,9 @@ class BmrForm extends Component {
               <Button buttonStyle='btn--custom1'>Submit</Button>
             </div>
           </form>
-        </div>
+          
+        <div className="table-container">
+        <h1 className='resulttext'>Your Result</h1>
         <NutritionInfo
           carbohydrate={this.state.carbohydrate}
           protein={this.state.protein}
@@ -246,6 +251,24 @@ class BmrForm extends Component {
           perfromprotein={this.state.perfromprotein}
           perfromfat={this.state.perfromfat}
         />
+        </div>
+        <h1 className='resulttext2'>Your Nutrition Breakdown</h1>
+        <div className='pie'>
+        {this.state.carbohydrate && this.state.protein && this.state.fat &&
+  <Pie
+    data={{
+      labels: ['Carbohydrate', 'Protein', 'Fat'],
+      datasets: [{
+        data: [this.state.carbohydrate, this.state.protein, this.state.fat],
+        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+        hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+      }],
+    }}
+    options={{ maintainAspectRatio: false, height: '50%', width: '50%' }}
+    style={{height: "400px", width: "400px" }}
+  />
+}</div>
+</div>
         <Footer />
       </>
     );

@@ -35,9 +35,10 @@ const useForm = (callback, validate) => {
         const response = await fetch(url, options);
         const data = await response.json();
         console.log(data); // do something with the response data
-        // if(data.isSuccess){
-        //   window.location.href='/Home';
-        // }
+        localStorage.setItem('token',data.token);
+        if(data.isSuccess){
+          window.location.href='/Home';
+        }
       
       } catch (error) {
         console.error(error);

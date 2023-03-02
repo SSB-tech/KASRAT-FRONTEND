@@ -19,8 +19,9 @@
     color: rgb(1, 87, 87);
 
   }
+  
 
-  .bmrform-container h1{
+  .titletext{
     margin-top: 2rem;
     font-size: 26px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -28,6 +29,12 @@
 
   }
 
+  .text{
+    margin-top: 2rem;
+    font-size: 26px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(1, 87, 87);
+  }
   .form-box {
     background-color: #f2f2f2;
     padding: 20px;
@@ -38,6 +45,22 @@
     margin-bottom: 2rem;
     width: 50%;
     align-items: 'center';
+  }
+
+  .resulttext{
+    font-size: 26px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(1, 87, 87);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .resulttext2{
+    margin-top: 2rem;
+    font-size: 26px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(1, 87, 87);
+    margin-bottom: 0.5rem;
   }
   
   .form-group {
@@ -68,5 +91,4 @@
     justify-content: center;
   }
 
-  
   

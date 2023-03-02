@@ -55,7 +55,7 @@ class BmiForm extends Component {
     };
     const url = 'http://localhost:5054/api/Calculation/bmi';
     try {
-      const response = await fetch(url, options);
+      const response = await fetch(url, options); 
       const data = await response.json();
       console.log(data); // do something with the response data
       if(data.isSuccess){

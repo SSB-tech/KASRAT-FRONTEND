@@ -10,6 +10,7 @@ import BmrForm from './components/pages/BmrForm';
 import Form from './components/pages/Form'
 import FormSign from './components/pages/FormSign';
 import Logout from './components/pages/LogOut';
+import Progress from './components/pages/Progress';
 
 
 
@@ -29,6 +30,7 @@ function App() {
       <Route path= '/BmrForm' element={<BmrForm/>}/>
       <Route path= '/Workouts' element={<Workouts/>}/>
       <Route path= '/Logout' element={<Logout/>}/>
+      <Route path= '/Progress' element={<Progress/>}/>
       </Routes>
       </Router>
       
