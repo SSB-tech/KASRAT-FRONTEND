@@ -119,7 +119,17 @@ class BmrForm extends Component {
   };
 
   handleBodyfatChange = (event) => {
-    this.setState({ bodyfat: event.target.value });
+    const bodyfat = event.target.value;
+    let goal = '';
+
+    if (bodyfat >= 18) {
+      goal = 'lose fat';
+    } else if (bodyfat <= 12) {
+      goal = 'build muscle';
+    } else {
+      goal = 'build muscle lose fat';
+    }
+    this.setState({ bodyfat, goal });
   };
 
   handleExperienceChange = (event) => {
@@ -174,11 +184,11 @@ class BmrForm extends Component {
                   value={this.state.lifestyle}
                   onChange={this.handleLifestyleChange}
                 >
-                  <option value="">Select a lifestyle</option>
-                  <option value="s">Sedentary</option>
-                  <option value="la">Lightly active</option>
-                  <option value="ma">Moderately active</option>
-                  <option value="ha">Very active</option>
+                  <option value="" className='option'>Select a lifestyle</option>
+                  <option value="s" className='option'>Sedentary</option>
+                  <option value="la" className='option'>Lightly active</option>
+                  <option value="ma" className='option'>Moderately active</option>
+                  <option value="ha" className='option'>Very active</option>
                 </select>
               </div>
               <div className="form-group">
@@ -189,9 +199,9 @@ class BmrForm extends Component {
                   value={this.state.gender}
                   onChange={this.handleGenderChange}
                 >
-                  <option value="">Select Gender</option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
+                  <option value="" className='option'>Select Gender</option>
+                  <option value="male" className='option'>Male</option>
+                  <option value="female" className='option'>Female</option>
                 </select>
               </div>
               <div className="form-group">
@@ -212,25 +222,25 @@ class BmrForm extends Component {
                   value={this.state.experience}
                   onChange={this.handleExperienceChange}
                 >
-                  <option value="">Select Your Experience Level</option>
-                  <option value="b">Begineer</option>
-                  <option value="i">Intermediate</option>
-                  <option value="a">Advanced</option>
+                  <option value="" className='option'>Select Your Experience Level</option>
+                  <option value="b" className='option'>Begineer</option>
+                  <option value="i" className='option'>Intermediate</option>
+                  <option value="a" className='option'>Advanced</option>
                 </select>
               </div>
               <div className="form-group">
                 <label className='form-label1'> Goal : </label>
                 <select
-                  className="form-input1"
-                  name='goal'
-                  value={this.state.goal}
-                  onChange={this.handleGoalChange}
-                >
-                  <option value="">Select Your Goal</option>
-                  <option value="lose fat">Lose Fat</option>
-                  <option value="build muscle">Build Muscle</option>
-                  <option value="build muscle lose fat">Recomposition/Build Muscle and Lose Fat</option>
-                </select>
+                className="form-input1"
+                name='goal'
+                value={this.state.goal}
+                onChange={this.handleGoalChange}
+                disabled={true}
+              >
+                <option value="lose fat">Lose Fat</option>
+                <option value="build muscle">Build Muscle</option>
+                <option value="build muscle lose fat">Recomposition</option>
+              </select>
               </div>
             </div>
             <div className='btn-form'>

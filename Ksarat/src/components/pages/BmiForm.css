@@ -83,7 +83,12 @@
     padding: 10px;
     font-size: 16px;
     margin-bottom: 0.5rem;
-    width: 80%;
+    /* width: 80%; */
+    text-align: center;
+  }
+
+  .option{
+    text-align: justify;
   }
 
   .btn-form{
